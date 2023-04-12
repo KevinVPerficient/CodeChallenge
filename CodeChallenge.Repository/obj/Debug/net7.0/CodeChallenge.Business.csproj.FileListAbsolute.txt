@@ -1,0 +1,15 @@
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\bin\Debug\net7.0\CodeChallenge.Business.deps.json
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\bin\Debug\net7.0\CodeChallenge.Business.dll
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\bin\Debug\net7.0\CodeChallenge.Business.pdb
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\bin\Debug\net7.0\CodeChallenge.Data.dll
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\bin\Debug\net7.0\CodeChallenge.Data.pdb
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\CodeChallenge.Business.csproj.AssemblyReference.cache
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\CodeChallenge.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\CodeChallenge.Business.AssemblyInfoInputs.cache
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\CodeChallenge.Business.AssemblyInfo.cs
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\CodeChallenge.Business.csproj.CoreCompileInputs.cache
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\CodeChallenge.Business.csproj.CopyComplete
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\CodeChallenge.Business.dll
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\refint\CodeChallenge.Business.dll
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\CodeChallenge.Business.pdb
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\ref\CodeChallenge.Business.dll

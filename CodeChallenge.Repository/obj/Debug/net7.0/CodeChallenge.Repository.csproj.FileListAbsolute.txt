@@ -1,0 +1,12 @@
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\bin\Debug\net7.0\CodeChallenge.Repository.deps.json
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\bin\Debug\net7.0\CodeChallenge.Repository.dll
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\bin\Debug\net7.0\CodeChallenge.Repository.pdb
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\CodeChallenge.Repository.csproj.AssemblyReference.cache
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\CodeChallenge.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\CodeChallenge.Repository.AssemblyInfoInputs.cache
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\CodeChallenge.Repository.AssemblyInfo.cs
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\CodeChallenge.Repository.csproj.CoreCompileInputs.cache
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\CodeChallenge.Repository.dll
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\refint\CodeChallenge.Repository.dll
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\CodeChallenge.Repository.pdb
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Repository\obj\Debug\net7.0\ref\CodeChallenge.Repository.dll
