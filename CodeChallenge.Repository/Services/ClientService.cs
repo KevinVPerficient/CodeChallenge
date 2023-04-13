@@ -18,13 +18,14 @@ namespace CodeChallenge.Business.Services
             _clientRepository = clientRepository;
             _mapper = mapper;
         }
-        public async Task Create(ClientDto obj)
+        public async Task<bool> Create(ClientDto obj)
         {
             validator.ValidateAndThrow(obj);
             if (obj.Branches == null) throw new Exception("Please add at least one branch");
 
             var client = _mapper.Map<Client>(obj);
             await _clientRepository.Create(client);
+            return true;
         }
 
         public bool Delete(string Id)

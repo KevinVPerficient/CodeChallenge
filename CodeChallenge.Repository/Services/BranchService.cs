@@ -2,7 +2,7 @@
 using CodeChallenge.Business.Services.Interfaces;
 using CodeChallenge.Data.DTOs;
 using CodeChallenge.Data.DTOs.Validations;
-using CodeChallenge.Data.Services;
+using CodeChallenge.Data.Models;
 using CodeChallenge.Data.Services.Interfaces;
 using FluentValidation;
 
@@ -12,15 +12,20 @@ namespace CodeChallenge.Business.Services
     {
         private readonly IBranchRepository _branchRepository;
         private readonly IMapper _mapper;
+        private BranchValdations validator = new BranchValdations();
 
         public BranchService(IBranchRepository branchRepository, IMapper mapper)
         {
             _branchRepository = branchRepository;
             _mapper = mapper;
         }
-        public Task Create(BranchDto obj)
+        public async Task<bool> Create(BranchDto obj)
         {
-            throw new NotImplementedException();
+            validator.ValidateAndThrow(obj);
+
+            var branch = _mapper.Map<Branch>(obj);
+            await _branchRepository.Create(branch);
+            return true;
         }
 
         public bool Delete(string Id)
@@ -45,7 +50,6 @@ namespace CodeChallenge.Business.Services
 
         public async Task Update(BranchDto obj, string id)
         {
-            var validator = new BranchValdations();
             validator.ValidateAndThrow(obj);
             var branch = _branchRepository.GetById(id);
             

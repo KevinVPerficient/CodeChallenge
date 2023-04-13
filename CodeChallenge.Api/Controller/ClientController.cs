@@ -78,9 +78,9 @@ namespace CodeChallenge.Api.Controller
         /// <returns>Client record</returns>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public IActionResult Create(ClientDto dto)
+        public async Task<IActionResult> Create(ClientDto dto)
         {
-            _clientService.Create(dto);
+            await _clientService.Create(dto);
             return CreatedAtAction(nameof(Create), dto);
         }
     }

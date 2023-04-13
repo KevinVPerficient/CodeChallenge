@@ -79,9 +79,9 @@ namespace CodeChallenge.Api.Controller
         /// <returns>Branch record</returns>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public IActionResult Create(BranchDto dto)
+        public async Task<IActionResult> Create(BranchDto dto)
         {
-            _branchService.Create(dto);
+            await _branchService.Create(dto);
             return CreatedAtAction(nameof(Create), dto);
         }
     }
