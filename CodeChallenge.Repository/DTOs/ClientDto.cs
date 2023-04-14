@@ -1,9 +1,8 @@
 ﻿using CodeChallenge.Data.Enums;
-using CodeChallenge.Data.Models;
 
 namespace CodeChallenge.Data.DTOs
 {
-    public class ClientDto : ContactInformationDto
+    public class BranchDto : ContactInformationDto
     {
         public ClientType ClientType { get; set; }
         public string? FullName { get; set; }

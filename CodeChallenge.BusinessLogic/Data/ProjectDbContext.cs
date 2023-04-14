@@ -20,6 +20,14 @@ namespace CodeChallenge.Data.Data
             modelBuilder.Entity<Branch>(entity =>
             {
                 entity.HasIndex(e => new { e.ClientGuid, e.Code }).IsUnique();
+                entity.HasIndex(e => e.PhoneNumber).IsUnique();
+                entity.HasIndex(e => e.CellPhoneNumber).IsUnique();
+            });
+            modelBuilder.Entity<Client>(entity =>
+            {
+                entity.HasIndex(e => e.DocNumber).IsUnique();
+                entity.HasIndex(e => e.PhoneNumber).IsUnique();
+                entity.HasIndex(e => e.CellPhoneNumber).IsUnique();
             });
         }
     }

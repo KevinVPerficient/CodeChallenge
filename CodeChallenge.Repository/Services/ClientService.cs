@@ -18,7 +18,7 @@ namespace CodeChallenge.Business.Services
             _clientRepository = clientRepository;
             _mapper = mapper;
         }
-        public async Task<bool> Create(ClientDto obj)
+        public async Task<bool> Create(BranchDto obj)
         {
             validator.ValidateAndThrow(obj);
             if (obj.Branches == null) throw new Exception("Please add at least one branch");
@@ -28,32 +28,43 @@ namespace CodeChallenge.Business.Services
             return true;
         }
 
-        public bool Delete(string Id)
+        public async Task<bool> Delete(string Id)
         {
-            var clientToDelete = _clientRepository.GetById(Id);      
-            if (clientToDelete == null) return false;
-            _clientRepository.Delete(clientToDelete);
+            var clientToDelete = (await (_clientRepository.GetById(Id)));      
+            if (clientToDelete.Count() == 0) return false;
+            await _clientRepository.Delete(clientToDelete.FirstOrDefault());
             return true;
         }
 
-        public IEnumerable<ClientDto> GetAll()
+        public IEnumerable<BranchDto> GetAll()
         {
-            var clients = _mapper.Map<List<ClientDto>>(_clientRepository.GetAll());
+            var clients = _mapper.Map<List<BranchDto>>(_clientRepository.GetAll());
             return clients;
         }
 
-        public ClientDto GetById(string Id)
+        public IEnumerable<BranchDto> GetByCity(string City)
         {
-            var client = _mapper.Map<ClientDto>(_clientRepository.GetById(Id));
+            var client = _mapper.Map<IEnumerable<BranchDto>>(_clientRepository.GetByCity(City));
             return client;
         }
 
-        public async Task Update(ClientDto obj, string id)
+        public IEnumerable<BranchDto> GetById(string Id)
+        {
+            var client = _mapper.Map<IEnumerable<BranchDto>>(_clientRepository.GetById(Id));
+            return client;
+        }
+
+        public async Task<IEnumerable<BranchDto>> GetBySeller(string code)
+        {
+            var clients = _mapper.Map<List<BranchDto>>(await _clientRepository.GetBySeller(code));
+            return clients;
+        }
+
+        public async Task Update(BranchDto obj, string id)
         {
             validator.ValidateAndThrow(obj);
 
-            var client = _clientRepository.GetById(id);
-
+            var client = (await _clientRepository.GetById(id)).FirstOrDefault() ?? throw new Exception("Client doesn't exist");
             client.ClientType = obj.ClientType;
             client.FullName = obj.FullName;
             client.CompanyName = obj.CompanyName;

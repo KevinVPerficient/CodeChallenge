@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace CodeChallenge.Data.DTOs.Validations
 {
-    public class ClientValidations : AbstractValidator<ClientDto>
+    public class ClientValidations : AbstractValidator<BranchDto>
     {
         public ClientValidations()
         {

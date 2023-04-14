@@ -30,9 +30,26 @@ namespace CodeChallenge.Data.Services
             return _context.Clients.Include(x => x.Branches).ToList();
         }
 
-        public Client GetById(string Id)
+        public async Task<IEnumerable<Client>> GetByCity(string City)
+        {
+            return await _context.Clients.Include(x => x.Branches).Where(x => x.City == City).ToListAsync();
+        }
+
+        public async Task<IEnumerable<Client>> GetById(string Id)
         {                                                                                       
-            return _context.Clients.Include(x => x.Branches).Where(x => x.DocNumber == Id).FirstOrDefault();
+            return await _context.Clients.Include(x => x.Branches).Where(x => x.DocNumber == Id).ToListAsync();
+        }
+
+        public async Task<List<Client>> GetBySeller(string code)
+        {
+            var branches = await _context.Branches.Include(x => x.Client).Where(x => x.SellerCode == code).ToListAsync();
+            List<Client> clients = new List<Client>();
+            if(branches == null) return clients; 
+            foreach (var branch in branches)
+            {
+                clients.Add(branch.Client);
+            }
+            return clients;
         }
 
         public async Task Update(Client obj)

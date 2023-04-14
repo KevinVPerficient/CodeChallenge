@@ -1,6 +1,7 @@
 ﻿using CodeChallenge.Data.Data;
 using CodeChallenge.Data.Models;
 using CodeChallenge.Data.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace CodeChallenge.Data.Services
 {
@@ -30,9 +31,14 @@ namespace CodeChallenge.Data.Services
             return _context.Branches.ToList();
         }
 
-        public Branch GetById(string Id)
+        public async Task<IEnumerable<Branch>> GetByCity(string City)
         {
-            return _context.Branches.Where(x => x.Code == Id).FirstOrDefault();
+            return await _context.Branches.Where(x => x.City == City).ToListAsync();
+        }
+
+        public async Task<IEnumerable<Branch>> GetById(string Id)
+        {
+            return await _context.Branches.Where(x => x.Code == Id).ToListAsync();
         }
 
         public async Task Update(Branch obj)

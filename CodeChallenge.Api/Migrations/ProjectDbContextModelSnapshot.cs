@@ -74,6 +74,14 @@ namespace CodeChallenge.Api.Migrations
 
                     b.HasKey("BranchId");
 
+                    b.HasIndex("CellPhoneNumber")
+                        .IsUnique()
+                        .HasFilter("[CellPhoneNumber] IS NOT NULL");
+
+                    b.HasIndex("PhoneNumber")
+                        .IsUnique()
+                        .HasFilter("[PhoneNumber] IS NOT NULL");
+
                     b.HasIndex("ClientGuid", "Code")
                         .IsUnique();
 
@@ -110,7 +118,7 @@ namespace CodeChallenge.Api.Migrations
 
                     b.Property<string>("DocNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("DocType")
                         .HasColumnType("int");
@@ -126,6 +134,17 @@ namespace CodeChallenge.Api.Migrations
                         .HasColumnType("nvarchar(12)");
 
                     b.HasKey("ClientId");
+
+                    b.HasIndex("CellPhoneNumber")
+                        .IsUnique()
+                        .HasFilter("[CellPhoneNumber] IS NOT NULL");
+
+                    b.HasIndex("DocNumber")
+                        .IsUnique();
+
+                    b.HasIndex("PhoneNumber")
+                        .IsUnique()
+                        .HasFilter("[PhoneNumber] IS NOT NULL");
 
                     b.ToTable("Clients");
                 });

@@ -20,7 +20,7 @@ namespace CodeChallenge.Api.Migrations
                     FullName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CompanyName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DocType = table.Column<int>(type: "int", nullable: false),
-                    DocNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DocNumber = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -62,10 +62,44 @@ namespace CodeChallenge.Api.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Branches_CellPhoneNumber",
+                table: "Branches",
+                column: "CellPhoneNumber",
+                unique: true,
+                filter: "[CellPhoneNumber] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Branches_ClientGuid_Code",
                 table: "Branches",
                 columns: new[] { "ClientGuid", "Code" },
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Branches_PhoneNumber",
+                table: "Branches",
+                column: "PhoneNumber",
+                unique: true,
+                filter: "[PhoneNumber] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Clients_CellPhoneNumber",
+                table: "Clients",
+                column: "CellPhoneNumber",
+                unique: true,
+                filter: "[CellPhoneNumber] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Clients_DocNumber",
+                table: "Clients",
+                column: "DocNumber",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Clients_PhoneNumber",
+                table: "Clients",
+                column: "PhoneNumber",
+                unique: true,
+                filter: "[PhoneNumber] IS NOT NULL");
         }
 
         /// <inheritdoc />

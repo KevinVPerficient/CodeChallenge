@@ -8,37 +8,41 @@ namespace CodeChallenge.Api.Controller
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class ClientController : ControllerBase
+    public class ClientsController : ControllerBase
     {
         private readonly IClientService _clientService;
-        public ClientController(IClientService clientService)
+        public ClientsController(IClientService clientService)
         {
             _clientService = clientService;
         }
 
         /// <summary>
-        /// Returns all Clients Records
+        /// Returns a Client record by DocNumber, city or seller code
         /// </summary>
-        /// <returns>List of clientsDto</returns>
+        /// <param name="Doc"></param>
+        /// <param name="City"></param>
+        /// <param name="SellerCode"></param>
+        /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IEnumerable<ClientDto> Get()
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<IActionResult> Get(string? Doc, string? City, string? SellerCode)
         {
-            return _clientService.GetAll();
+            IEnumerable<BranchDto>? clients = null;
+
+            if (Doc == null && City == null && SellerCode == null)
+                clients = _clientService.GetAll();
+            if (Doc != null) 
+                clients = _clientService.GetById(Doc);
+            if(City != null)
+                clients = _clientService.GetByCity(City);
+            if(SellerCode != null)
+                clients = await _clientService.GetBySeller(SellerCode);
+             
+            return (clients == null || clients.Count() == 0) ? NotFound() : Ok(clients);
         }
 
-        /// <summary>
-        /// Returns a Client record by DocNumber
-        /// </summary>
-        /// <returns>clientDto</returns>
-        [HttpGet("{doc}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult GetByDoc(string doc)
-        {
-            var client = _clientService.GetById(doc);
-            return client == null ? NotFound() : Ok(client);
-        }
 
         /// <summary>
         /// Updates a Client record
@@ -49,7 +53,8 @@ namespace CodeChallenge.Api.Controller
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Update(string doc, ClientDto client)
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<IActionResult> Update(string doc, BranchDto client)
         {
             if (client == null) return BadRequest("Client is null");
 
@@ -65,9 +70,10 @@ namespace CodeChallenge.Api.Controller
         [HttpDelete]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult Delete(string doc)
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<IActionResult> Delete(string doc)
         {
-            var deleted = _clientService.Delete(doc);
+            var deleted = await _clientService.Delete(doc);
             if (deleted) return NoContent(); else return NotFound();
         }
 
@@ -78,7 +84,8 @@ namespace CodeChallenge.Api.Controller
         /// <returns>Client record</returns>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<IActionResult> Create(ClientDto dto)
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<IActionResult> Create(BranchDto dto)
         {
             await _clientService.Create(dto);
             return CreatedAtAction(nameof(Create), dto);
