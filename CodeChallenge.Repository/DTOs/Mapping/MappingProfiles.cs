@@ -10,7 +10,7 @@ namespace CodeChallenge.Business.DTOs.Mapping
         {
             CreateMap<Auth, AuthDto>().ReverseMap();
             CreateMap<Branch, BranchDto>().ReverseMap();
-            CreateMap<Client, BranchDto>().ReverseMap();
+            CreateMap<Client, ClientDto>().ReverseMap();
         }
     }
 }

@@ -18,7 +18,7 @@ namespace CodeChallenge.Business.Services
             _clientRepository = clientRepository;
             _mapper = mapper;
         }
-        public async Task<bool> Create(BranchDto obj)
+        public async Task<bool> Create(ClientDto obj)
         {
             validator.ValidateAndThrow(obj);
             if (obj.Branches == null) throw new Exception("Please add at least one branch");
@@ -36,31 +36,30 @@ namespace CodeChallenge.Business.Services
             return true;
         }
 
-        public IEnumerable<BranchDto> GetAll()
+        public IEnumerable<ClientDto> GetAll()
         {
-            var clients = _mapper.Map<List<BranchDto>>(_clientRepository.GetAll());
-            return clients;
+            return _mapper.Map<List<ClientDto>>(_clientRepository.GetAll());
         }
 
-        public IEnumerable<BranchDto> GetByCity(string City)
+        public async Task<IEnumerable<ClientDto>> GetByCity(string City)
         {
-            var client = _mapper.Map<IEnumerable<BranchDto>>(_clientRepository.GetByCity(City));
+            var client = _mapper.Map<IEnumerable<ClientDto>>(await _clientRepository.GetByCity(City));
             return client;
         }
 
-        public IEnumerable<BranchDto> GetById(string Id)
+        public async Task<IEnumerable<ClientDto>> GetById(string Id)
         {
-            var client = _mapper.Map<IEnumerable<BranchDto>>(_clientRepository.GetById(Id));
+            var client = _mapper.Map<IEnumerable<ClientDto>>(await _clientRepository.GetById(Id));
             return client;
         }
 
-        public async Task<IEnumerable<BranchDto>> GetBySeller(string code)
+        public async Task<IEnumerable<ClientDto>> GetBySeller(string code)
         {
-            var clients = _mapper.Map<List<BranchDto>>(await _clientRepository.GetBySeller(code));
+            var clients = _mapper.Map<List<ClientDto>>(await _clientRepository.GetBySeller(code));
             return clients;
         }
 
-        public async Task Update(BranchDto obj, string id)
+        public async Task Update(ClientDto obj, string id)
         {
             validator.ValidateAndThrow(obj);
 

@@ -19,22 +19,25 @@ namespace CodeChallenge.Api.Controller
         /// <summary>
         ///  Gets all or one branch record by its code or city
         /// </summary>
-        /// <param name="Code"></param>
-        /// <param name="City"></param>
+        /// <param name="Code">Branch code</param>
+        /// <param name="City">Branch city</param>
+        /// <param name="ClientDoc">Client document number</param>
         /// <returns>List of BranchDto</returns>        
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BranchDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public IActionResult Get(string? Code, string? City)
+        public async Task<IActionResult> Get(string? Code, string? City, string ClientDoc)
         {
             IEnumerable<BranchDto>? branches = null;
             if (Code == null && City == null)
                 branches = _branchService.GetAll();
             if (Code != null)
-                branches = _branchService.GetById(Code);
+                branches = await _branchService.GetById(Code);
             if (City != null)
-                branches = _branchService.GetByCity(City);
+                branches = await _branchService.GetByCity(City);
+            if (ClientDoc != null)
+                branches = await _branchService.GetByClientDoc(ClientDoc);
 
             return (branches == null || branches.Count() == 0) ? NotFound() : Ok(branches);
         }
@@ -42,18 +45,19 @@ namespace CodeChallenge.Api.Controller
         /// <summary>
         /// Updates a branch record
         /// </summary>
-        /// <param name="doc"></param>
+        /// <param name="Code">Branch code</param>
         /// <param name="branch"></param>
+        /// <param name="ClientDoc">Client document</param>
         /// <returns>No content</returns>
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<IActionResult> Update(string doc, BranchDto branch)
+        public async Task<IActionResult> Update(string ClientDoc, string Code, BranchDto branch)
         {
             if (branch == null) return BadRequest("Branch is null");
 
-            await _branchService.Update(branch, doc);
+            await _branchService.Update(branch, Code, ClientDoc);
             return NoContent();
         }
 
@@ -66,9 +70,9 @@ namespace CodeChallenge.Api.Controller
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<IActionResult> Delete(string Code)
+        public async Task<IActionResult> Delete(string Code, string ClientDoc)
         {
-            var deleted = await _branchService.Delete(Code);
+            var deleted = await _branchService.Delete(Code, ClientDoc);
             if (deleted) return NoContent(); else return NotFound();
         }
 
@@ -76,14 +80,15 @@ namespace CodeChallenge.Api.Controller
         /// Creates a new Branch record
         /// </summary>
         /// <param name="Dto"></param>
+        /// <param name="Doc">Client document</param>
         /// <returns>Branch record</returns>
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ClientDto), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<IActionResult> Create(BranchDto Dto, string Doc)
         {
-            await _branchService.Create(Dto);
+            await _branchService.Create(Dto, Doc);
             return CreatedAtAction(nameof(Create), Dto);
         }
     }

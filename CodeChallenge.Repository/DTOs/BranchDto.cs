@@ -1,6 +1,4 @@
-﻿using CodeChallenge.Data.Models;
-
-namespace CodeChallenge.Data.DTOs
+﻿namespace CodeChallenge.Data.DTOs
 {
     public class BranchDto : ContactInformationDto
     {

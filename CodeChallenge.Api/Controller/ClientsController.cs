@@ -24,19 +24,19 @@ namespace CodeChallenge.Api.Controller
         /// <param name="SellerCode"></param>
         /// <returns></returns>
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ClientDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<IActionResult> Get(string? Doc, string? City, string? SellerCode)
         {
-            IEnumerable<BranchDto>? clients = null;
+            IEnumerable<ClientDto>? clients = null;
 
             if (Doc == null && City == null && SellerCode == null)
                 clients = _clientService.GetAll();
             if (Doc != null) 
-                clients = _clientService.GetById(Doc);
+                clients = await _clientService.GetById(Doc);
             if(City != null)
-                clients = _clientService.GetByCity(City);
+                clients = await _clientService.GetByCity(City);
             if(SellerCode != null)
                 clients = await _clientService.GetBySeller(SellerCode);
              
@@ -47,48 +47,48 @@ namespace CodeChallenge.Api.Controller
         /// <summary>
         /// Updates a Client record
         /// </summary>
-        /// <param name="doc"></param>
-        /// <param name="client"></param>
+        /// <param name="Doc"></param>
+        /// <param name="Client"></param>
         /// <returns>No content</returns>
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<IActionResult> Update(string doc, BranchDto client)
+        public async Task<IActionResult> Update(string Doc, ClientDto Client)
         {
-            if (client == null) return BadRequest("Client is null");
+            if (Client == null) return BadRequest("Client is null");
 
-            await _clientService.Update(client, doc);
+            await _clientService.Update(Client, Doc);
             return NoContent();
         }
 
         /// <summary>
         /// Delete a client record
         /// </summary>
-        /// <param name="doc">Identification number</param>
+        /// <param name="Doc">Identification number</param>
         /// <returns></returns>
         [HttpDelete]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<IActionResult> Delete(string doc)
+        public async Task<IActionResult> Delete(string Doc)
         {
-            var deleted = await _clientService.Delete(doc);
+            var deleted = await _clientService.Delete(Doc);
             if (deleted) return NoContent(); else return NotFound();
         }
 
         /// <summary>
         /// Creates a new Client record
         /// </summary>
-        /// <param name="dto"></param>
+        /// <param name="Dto"></param>
         /// <returns>Client record</returns>
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ClientDto),StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<IActionResult> Create(BranchDto dto)
+        public async Task<IActionResult> Create(ClientDto Dto)
         {
-            await _clientService.Create(dto);
-            return CreatedAtAction(nameof(Create), dto);
+            await _clientService.Create(Dto);
+            return CreatedAtAction(nameof(Create), Dto);
         }
     }
 }

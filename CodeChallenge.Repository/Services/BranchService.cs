@@ -3,7 +3,6 @@ using CodeChallenge.Business.Services.Interfaces;
 using CodeChallenge.Data.DTOs;
 using CodeChallenge.Data.DTOs.Validations;
 using CodeChallenge.Data.Models;
-using CodeChallenge.Data.Services;
 using CodeChallenge.Data.Services.Interfaces;
 using FluentValidation;
 
@@ -12,29 +11,44 @@ namespace CodeChallenge.Business.Services
     public class BranchService : IBranchService
     {
         private readonly IBranchRepository _branchRepository;
+        private readonly IClientRepository _clientRepository;
         private readonly IMapper _mapper;
         private BranchValdations validator = new BranchValdations();
 
-        public BranchService(IBranchRepository branchRepository, IMapper mapper)
+        public BranchService(IBranchRepository branchRepository, IMapper mapper, IClientRepository clientRepository)
         {
             _branchRepository = branchRepository;
+            _clientRepository = clientRepository;
             _mapper = mapper;
         }
-        public async Task<bool> Create(BranchDto obj)
+        public Task<bool> Create(BranchDto obj)
+        {
+            throw new Exception("Insert client's document number");
+        }
+
+        public async Task<bool> Create(BranchDto obj, string doc)
         {
             validator.ValidateAndThrow(obj);
 
+            
             var branch = _mapper.Map<Branch>(obj);
+            var client = (await _clientRepository.GetById(doc)).FirstOrDefault() ?? throw new Exception("Client doesn't exist");
+            branch.Client = client;
             await _branchRepository.Create(branch);
             return true;
         }
 
         public async Task<bool> Delete(string Id)
         {
-            var branchToDelete = (await(_branchRepository.GetById(Id))).FirstOrDefault();
+            throw new Exception("Insert client's document number");
+        }
+
+        public async Task<bool> Delete(string Id, string ClientDoc)
+        {
+            var branchToDelete = (await(_branchRepository.GetById(Id))).Where(x => x.Client.DocNumber == ClientDoc).FirstOrDefault();
             if (branchToDelete == null) return false;
-            var CLientsBranch = _branchRepository.GetAll().Where(x => x.ClientGuid ==  branchToDelete.ClientGuid);
-            if (CLientsBranch.Count() == 1) throw new Exception("The client cannot be left without a branch");  
+            var CLientsBranch = _branchRepository.GetAll().Where(x => x.ClientGuid == branchToDelete.ClientGuid);
+            if (CLientsBranch.Count() == 1) throw new Exception("The client cannot be left without a branch");
             await _branchRepository.Delete(branchToDelete);
             return true;
         }
@@ -45,22 +59,35 @@ namespace CodeChallenge.Business.Services
             return branches;
         }
 
-        public IEnumerable<BranchDto> GetByCity(string City)
+        public async Task<IEnumerable<BranchDto>> GetByCity(string City)
         {
-            var branch = _mapper.Map<IEnumerable<BranchDto>>(_branchRepository.GetByCity(City).Result);
+            var branch = _mapper.Map<IEnumerable<BranchDto>>(await _branchRepository.GetByCity(City));
             return branch;
         }
 
-        public IEnumerable<BranchDto> GetById(string Id)
+        public async Task<IEnumerable<BranchDto>> GetByClientDoc(string doc)
         {
-            var branch = _mapper.Map<IEnumerable<BranchDto>>(_branchRepository.GetById(Id).Result);
+            var branches = _mapper.Map<IEnumerable<BranchDto>>(await _branchRepository.GetByClientDocument(doc));
+            return branches;
+        }
+
+        public async Task<IEnumerable<BranchDto>> GetById(string Id)
+        {
+            var branch = _mapper.Map<IEnumerable<BranchDto>>(await _branchRepository.GetById(Id));
             return branch;
         }
 
-        public async Task Update(BranchDto obj, string id)
+        public Task Update(BranchDto obj, string id)
+        {
+            throw new Exception("Insert client's document number");
+        }
+
+        public async Task Update(BranchDto obj, string id, string doc)
         {
             validator.ValidateAndThrow(obj);
-            var branch = (await _branchRepository.GetById(id)).FirstOrDefault() ?? throw new Exception("Branch doesn't exist");
+            var branch = (await _branchRepository.GetById(id))
+                .Where(x => x.Client.DocNumber == doc)
+                .FirstOrDefault() ?? throw new Exception("Branch doesn't exist");
 
             branch.Name = obj.Name;
             branch.SellerCode = obj.SellerCode;

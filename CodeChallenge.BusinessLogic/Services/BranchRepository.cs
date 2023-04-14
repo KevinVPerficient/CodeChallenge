@@ -36,9 +36,18 @@ namespace CodeChallenge.Data.Services
             return await _context.Branches.Where(x => x.City == City).ToListAsync();
         }
 
+        public async Task<IEnumerable<Branch>> GetByClientDocument(string doc)
+        {
+            var client = await (_context.Clients
+                .Include(x => x.Branches)
+                .Where(x => x.DocNumber == doc))
+                .FirstOrDefaultAsync() ?? throw new Exception("Client doesn't exist");
+            return client.Branches;
+        }
+
         public async Task<IEnumerable<Branch>> GetById(string Id)
         {
-            return await _context.Branches.Where(x => x.Code == Id).ToListAsync();
+            return await _context.Branches.Include(x => x.Client).Where(x => x.Code == Id).ToListAsync();
         }
 
         public async Task Update(Branch obj)

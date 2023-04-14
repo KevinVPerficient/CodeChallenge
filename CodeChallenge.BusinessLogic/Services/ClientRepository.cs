@@ -27,7 +27,8 @@ namespace CodeChallenge.Data.Services
                                                                     
         public IEnumerable<Client> GetAll()
         {
-            return _context.Clients.Include(x => x.Branches).ToList();
+            var clients = _context.Clients.Include(x => x.Branches).ToList();
+            return clients;
         }
 
         public async Task<IEnumerable<Client>> GetByCity(string City)
@@ -37,7 +38,8 @@ namespace CodeChallenge.Data.Services
 
         public async Task<IEnumerable<Client>> GetById(string Id)
         {                                                                                       
-            return await _context.Clients.Include(x => x.Branches).Where(x => x.DocNumber == Id).ToListAsync();
+            var clients = await _context.Clients.Include(x => x.Branches).Where(x => x.DocNumber == Id).ToListAsync();
+            return clients;
         }
 
         public async Task<List<Client>> GetBySeller(string code)

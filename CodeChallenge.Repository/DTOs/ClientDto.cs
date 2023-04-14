@@ -2,7 +2,7 @@
 
 namespace CodeChallenge.Data.DTOs
 {
-    public class BranchDto : ContactInformationDto
+    public class ClientDto : ContactInformationDto
     {
         public ClientType ClientType { get; set; }
         public string? FullName { get; set; }
