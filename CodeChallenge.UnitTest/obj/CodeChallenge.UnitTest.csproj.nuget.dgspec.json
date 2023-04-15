@@ -4,14 +4,136 @@
     "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.UnitTest\\CodeChallenge.UnitTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.UnitTest\\CodeChallenge.UnitTest.csproj": {
+    "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Api\\CodeChallenge.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.UnitTest\\CodeChallenge.UnitTest.csproj",
-        "projectName": "CodeChallenge.UnitTest",
-        "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.UnitTest\\CodeChallenge.UnitTest.csproj",
+        "projectUniqueName": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Api\\CodeChallenge.Api.csproj",
+        "projectName": "CodeChallenge.Api",
+        "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Api\\CodeChallenge.Api.csproj",
         "packagesPath": "C:\\Users\\kevin.vargast\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.UnitTest\\obj\\",
+        "outputPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\kevin.vargast\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nexus.vmaxlive.net/repository/nuget-group/": {},
+          "https://nexus.vmaxlive.net/repository/nuget-hosted/": {},
+          "https://nuget.pkg.github.com/safe-fleet/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.BusinessLogic\\CodeChallenge.Data.csproj": {
+                "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.BusinessLogic\\CodeChallenge.Data.csproj"
+              },
+              "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Repository\\CodeChallenge.Business.csproj": {
+                "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Repository\\CodeChallenge.Business.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.5.1, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.28.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.28.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.BusinessLogic\\CodeChallenge.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.BusinessLogic\\CodeChallenge.Data.csproj",
+        "projectName": "CodeChallenge.Data",
+        "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.BusinessLogic\\CodeChallenge.Data.csproj",
+        "packagesPath": "C:\\Users\\kevin.vargast\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -49,9 +171,191 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.5.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Repository\\CodeChallenge.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Repository\\CodeChallenge.Business.csproj",
+        "projectName": "CodeChallenge.Business",
+        "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Repository\\CodeChallenge.Business.csproj",
+        "packagesPath": "C:\\Users\\kevin.vargast\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\kevin.vargast\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nexus.vmaxlive.net/repository/nuget-group/": {},
+          "https://nexus.vmaxlive.net/repository/nuget-hosted/": {},
+          "https://nuget.pkg.github.com/safe-fleet/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.BusinessLogic\\CodeChallenge.Data.csproj": {
+                "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.BusinessLogic\\CodeChallenge.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.UnitTest\\CodeChallenge.UnitTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.UnitTest\\CodeChallenge.UnitTest.csproj",
+        "projectName": "CodeChallenge.UnitTest",
+        "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.UnitTest\\CodeChallenge.UnitTest.csproj",
+        "packagesPath": "C:\\Users\\kevin.vargast\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.UnitTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\kevin.vargast\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nexus.vmaxlive.net/repository/nuget-group/": {},
+          "https://nexus.vmaxlive.net/repository/nuget-hosted/": {},
+          "https://nuget.pkg.github.com/safe-fleet/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Api\\CodeChallenge.Api.csproj": {
+                "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Api\\CodeChallenge.Api.csproj"
+              },
+              "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.BusinessLogic\\CodeChallenge.Data.csproj": {
+                "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.BusinessLogic\\CodeChallenge.Data.csproj"
+              },
+              "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Repository\\CodeChallenge.Business.csproj": {
+                "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Repository\\CodeChallenge.Business.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Bogus": {
+              "target": "Package",
+              "version": "[34.0.2, )"
+            },
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.10.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.3.2, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.18.4, )"
             },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

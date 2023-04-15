@@ -46,7 +46,7 @@ IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
 
 builder.Services.AddScoped<IAuthorizationService, AuthtorizationService>();
-builder.Services.AddScoped<IAccessRepository, AccessService>();
+builder.Services.AddScoped<IAccessRepository, AccessRepository>();
 builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddScoped<IClientRepository, ClientRepository>();
 builder.Services.AddScoped<IBranchService, BranchService>();
