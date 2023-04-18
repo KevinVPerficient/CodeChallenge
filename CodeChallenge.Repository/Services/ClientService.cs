@@ -38,20 +38,18 @@ namespace CodeChallenge.Business.Services
 
         public IEnumerable<ClientDto> GetAll()
         {
-            var clients = _mapper.Map<List<ClientDto>>(_clientRepository.GetAll());
-            return clients;
+            return _mapper.Map<IEnumerable<ClientDto>>(_clientRepository.GetAll());
         }
 
         public async Task<IEnumerable<ClientDto>> GetByCity(string City)
         {
-            var client = _mapper.Map<IEnumerable<ClientDto>>(await _clientRepository.GetByCity(City));
-            return client;
+            
+            return _mapper.Map<IEnumerable<ClientDto>>(await _clientRepository.GetByCity(City));
         }
 
         public async Task<IEnumerable<ClientDto>> GetById(string Id)
         {
-            var client = _mapper.Map<IEnumerable<ClientDto>>(await _clientRepository.GetById(Id));
-            return client;
+            return _mapper.Map<IEnumerable<ClientDto>>(await _clientRepository.GetById(Id));
         }
 
         public async Task<IEnumerable<ClientDto>> GetBySeller(string code)

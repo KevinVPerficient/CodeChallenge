@@ -10,8 +10,6 @@
         "dependencies": {
           "Bogus": "34.0.2",
           "CodeChallenge.Api": "1.0.0",
-          "CodeChallenge.Business": "1.0.0",
-          "CodeChallenge.Data": "1.0.0",
           "FluentAssertions": "6.10.0",
           "Microsoft.EntityFrameworkCore.InMemory": "7.0.5",
           "Microsoft.NET.Test.Sdk": "17.3.2",

@@ -14,6 +14,11 @@ namespace CodeChallenge.Api.Controller
             _authorizationService = AuthorizationService;
         }
 
+        /// <summary>
+        /// Method to create token
+        /// </summary>
+        /// <param name="userDto">Dto</param>
+        /// <returns></returns>
         [HttpPost("Authenticate")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

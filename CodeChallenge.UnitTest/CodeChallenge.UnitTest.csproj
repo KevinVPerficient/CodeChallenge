@@ -28,8 +28,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CodeChallenge.Api\CodeChallenge.Api.csproj" />
-    <ProjectReference Include="..\CodeChallenge.BusinessLogic\CodeChallenge.Data.csproj" />
-    <ProjectReference Include="..\CodeChallenge.Repository\CodeChallenge.Business.csproj" />
   </ItemGroup>
 
 </Project>

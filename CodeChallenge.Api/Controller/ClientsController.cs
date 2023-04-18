@@ -19,9 +19,9 @@ namespace CodeChallenge.Api.Controller
         /// <summary>
         /// Returns a Client record by DocNumber, city or seller code
         /// </summary>
-        /// <param name="Doc"></param>
-        /// <param name="City"></param>
-        /// <param name="SellerCode"></param>
+        /// <param name="Doc">Client doc number</param>
+        /// <param name="City">Client city</param>
+        /// <param name="SellerCode">Seller code in branch</param>
         /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(typeof(ClientDto), StatusCodes.Status200OK)]
@@ -31,13 +31,13 @@ namespace CodeChallenge.Api.Controller
         {
             IEnumerable<ClientDto>? clients = null;
 
-            if (Doc == null && City == null && SellerCode == null)
+            if (Doc is null && City is null && SellerCode is null)
                 clients = _clientService.GetAll();
-            if (Doc != null) 
+            if (Doc is not null) 
                 clients = await _clientService.GetById(Doc);
-            if(City != null)
+            if(City is not null)
                 clients = await _clientService.GetByCity(City);
-            if(SellerCode != null)
+            if(SellerCode is not null)
                 clients = await _clientService.GetBySeller(SellerCode);
              
             return (clients == null || clients.Count() == 0) ? NotFound() : Ok(clients);
@@ -47,9 +47,9 @@ namespace CodeChallenge.Api.Controller
         /// <summary>
         /// Updates a Client record
         /// </summary>
-        /// <param name="Doc"></param>
-        /// <param name="Client"></param>
-        /// <returns>No content</returns>
+        /// <param name="Doc">Doc number</param>
+        /// <param name="Client">Client Dto</param>
+        /// <returns></returns>
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -80,7 +80,7 @@ namespace CodeChallenge.Api.Controller
         /// <summary>
         /// Creates a new Client record
         /// </summary>
-        /// <param name="Dto"></param>
+        /// <param name="Dto">Client Dto</param>
         /// <returns>Client record</returns>
         [HttpPost]
         [ProducesResponseType(typeof(ClientDto),StatusCodes.Status201Created)]

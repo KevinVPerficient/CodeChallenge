@@ -1,10 +1,3 @@
-C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\obj\Debug\net7.0\CodeChallenge.Api.csproj.AssemblyReference.cache
-C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\obj\Debug\net7.0\CodeChallenge.Api.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\obj\Debug\net7.0\CodeChallenge.Api.AssemblyInfoInputs.cache
-C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\obj\Debug\net7.0\CodeChallenge.Api.AssemblyInfo.cs
-C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\obj\Debug\net7.0\CodeChallenge.Api.csproj.CoreCompileInputs.cache
-C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\obj\Debug\net7.0\CodeChallenge.Api.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\obj\Debug\net7.0\CodeChallenge.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\bin\Debug\net7.0\appsettings.json
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\bin\Debug\net7.0\CodeChallenge.Api.exe
@@ -71,6 +64,13 @@ C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\C
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\bin\Debug\net7.0\CodeChallenge.Data.dll
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\bin\Debug\net7.0\CodeChallenge.Data.pdb
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\bin\Debug\net7.0\CodeChallenge.Business.pdb
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\obj\Debug\net7.0\CodeChallenge.Api.csproj.AssemblyReference.cache
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\obj\Debug\net7.0\CodeChallenge.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\obj\Debug\net7.0\CodeChallenge.Api.AssemblyInfoInputs.cache
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\obj\Debug\net7.0\CodeChallenge.Api.AssemblyInfo.cs
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\obj\Debug\net7.0\CodeChallenge.Api.csproj.CoreCompileInputs.cache
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\obj\Debug\net7.0\CodeChallenge.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\obj\Debug\net7.0\CodeChallenge.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\obj\Debug\net7.0\staticwebassets\msbuild.CodeChallenge.Api.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\obj\Debug\net7.0\staticwebassets\msbuild.build.CodeChallenge.Api.props
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.Api\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.CodeChallenge.Api.props

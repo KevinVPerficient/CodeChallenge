@@ -8994,8 +8994,6 @@
     "net7.0": [
       "Bogus >= 34.0.2",
       "CodeChallenge.Api >= 1.0.0",
-      "CodeChallenge.Business >= 1.0.0",
-      "CodeChallenge.Data >= 1.0.0",
       "FluentAssertions >= 6.10.0",
       "Microsoft.EntityFrameworkCore.InMemory >= 7.0.5",
       "Microsoft.NET.Test.Sdk >= 17.3.2",
@@ -9045,12 +9043,6 @@
           "projectReferences": {
             "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Api\\CodeChallenge.Api.csproj": {
               "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Api\\CodeChallenge.Api.csproj"
-            },
-            "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.BusinessLogic\\CodeChallenge.Data.csproj": {
-              "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.BusinessLogic\\CodeChallenge.Data.csproj"
-            },
-            "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Repository\\CodeChallenge.Business.csproj": {
-              "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Repository\\CodeChallenge.Business.csproj"
             }
           }
         }

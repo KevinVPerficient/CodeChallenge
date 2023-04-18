@@ -317,12 +317,6 @@
             "projectReferences": {
               "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Api\\CodeChallenge.Api.csproj": {
                 "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Api\\CodeChallenge.Api.csproj"
-              },
-              "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.BusinessLogic\\CodeChallenge.Data.csproj": {
-                "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.BusinessLogic\\CodeChallenge.Data.csproj"
-              },
-              "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Repository\\CodeChallenge.Business.csproj": {
-                "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.Repository\\CodeChallenge.Business.csproj"
               }
             }
           }

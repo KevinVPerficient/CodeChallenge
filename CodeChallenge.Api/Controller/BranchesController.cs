@@ -17,7 +17,7 @@ namespace CodeChallenge.Api.Controller
         }
 
         /// <summary>
-        ///  Gets all or one branch record by its code or city
+        ///  Gets all or one branch record by its code, city or client doc number
         /// </summary>
         /// <param name="Code">Branch code</param>
         /// <param name="City">Branch city</param>
@@ -27,16 +27,16 @@ namespace CodeChallenge.Api.Controller
         [ProducesResponseType(typeof(BranchDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<IActionResult> Get(string? Code, string? City, string ClientDoc)
+        public async Task<IActionResult> Get(string? Code, string? City, string? ClientDoc)
         {
             IEnumerable<BranchDto>? branches = null;
-            if (Code == null && City == null)
+            if (Code is null && City is null && ClientDoc is null)
                 branches = _branchService.GetAll();
-            if (Code != null)
+            if (Code is not null)
                 branches = await _branchService.GetById(Code);
-            if (City != null)
+            if (City is not null)
                 branches = await _branchService.GetByCity(City);
-            if (ClientDoc != null)
+            if (ClientDoc is not null)
                 branches = await _branchService.GetByClientDoc(ClientDoc);
 
             return (branches == null || branches.Count() == 0) ? NotFound() : Ok(branches);
@@ -46,7 +46,7 @@ namespace CodeChallenge.Api.Controller
         /// Updates a branch record
         /// </summary>
         /// <param name="Code">Branch code</param>
-        /// <param name="branch"></param>
+        /// <param name="branch">BranchDto</param>
         /// <param name="ClientDoc">Client document</param>
         /// <returns>No content</returns>
         [HttpPut]
@@ -79,7 +79,7 @@ namespace CodeChallenge.Api.Controller
         /// <summary>
         /// Creates a new Branch record
         /// </summary>
-        /// <param name="Dto"></param>
+        /// <param name="Dto">CLient Dto</param>
         /// <param name="Doc">Client document</param>
         /// <returns>Branch record</returns>
         [HttpPost]

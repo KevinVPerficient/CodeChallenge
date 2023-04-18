@@ -29,8 +29,6 @@ namespace CodeChallenge.Business.Services
         public async Task<bool> Create(BranchDto obj, string doc)
         {
             validator.ValidateAndThrow(obj);
-
-            
             var branch = _mapper.Map<Branch>(obj);
             var client = (await _clientRepository.GetById(doc)).FirstOrDefault() ?? throw new Exception("Client doesn't exist");
             branch.Client = client;
