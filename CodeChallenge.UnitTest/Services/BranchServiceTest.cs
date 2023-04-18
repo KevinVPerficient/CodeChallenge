@@ -120,7 +120,7 @@ namespace CodeChallenge.UnitTest.Services
         }
 
         [Fact]
-        public async Task Update_Should_Thronw_Exception_When_Validation_Fail()
+        public async Task Update_Should_Thrown_Exception_When_Validation_Fail()
         {
             //Arrange
             var client = FakeDataHelper.CreateFakeClient().Generate(1);
@@ -139,7 +139,7 @@ namespace CodeChallenge.UnitTest.Services
         }
 
         [Fact]
-        public async Task Update_Should_Thronw_Exception_When_Branch_Is_Not_Found()
+        public async Task Update_Should_Thrown_Exception_When_Branch_Is_Not_Found()
         {
             //Arrange
             var emptyList = new List<Branch>();
@@ -211,7 +211,7 @@ namespace CodeChallenge.UnitTest.Services
         }
 
         [Fact]
-        public async Task Create_Should_Thronw_Exception_When_Validation_Fail()
+        public async Task Create_Should_Thrown_Exception_When_Validation_Fail()
         {
             //Arrange
             var ClientDoc = "123450";
@@ -229,7 +229,7 @@ namespace CodeChallenge.UnitTest.Services
         }
 
         [Fact]
-        public async Task Create_Should_Thronw_Exception_When_client_Is_Not_Found()
+        public async Task Create_Should_Thrown_Exception_When_client_Is_Not_Found()
         {
             //Arrange
             var ClientDoc = "123450";

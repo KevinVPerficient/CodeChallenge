@@ -114,7 +114,7 @@ namespace CodeChallenge.UnitTest.Services
         }
 
         [Fact]
-        public async Task Update_Should_Thronw_Exception_When_Validation_Fail()
+        public async Task Update_Should_Thrown_Exception_When_Validation_Fail()
         {
             //Arrange
             clientRepositoryMock.Setup(x => x.GetById(clients.First().DocNumber))
@@ -130,7 +130,7 @@ namespace CodeChallenge.UnitTest.Services
         }
 
         [Fact]
-        public async Task Update_Should_Thronw_Exception_When_Client_Is_Not_Found()
+        public async Task Update_Should_Thrown_Exception_When_Client_Is_Not_Found()
         {
             //Arrange
             var emptyList = new List<Client>();
@@ -195,7 +195,7 @@ namespace CodeChallenge.UnitTest.Services
         }
 
         [Fact]
-        public async Task Create_Should_Thronw_Exception_When_Validation_Fail()
+        public async Task Create_Should_Thrown_Exception_When_Validation_Fail()
         {
             //Arrange
             clients.First().Branches = FakeDataHelper.CreateFakeBranch().Generate(2);
@@ -210,7 +210,7 @@ namespace CodeChallenge.UnitTest.Services
         }
 
         [Fact]
-        public async Task Create_Should_Thronw_Exception_When_Client_Dont_Have_Branch()
+        public async Task Create_Should_Thrown_Exception_When_Client_Dont_Have_Branch()
         {
             //Arrange
             var clientDto = _mapper.Map<ClientDto>(clients.First());

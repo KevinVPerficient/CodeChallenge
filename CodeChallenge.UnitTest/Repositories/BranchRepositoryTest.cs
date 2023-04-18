@@ -62,6 +62,19 @@ namespace CodeChallenge.UnitTest.Repositories
         }
 
         [Fact]
+        public async Task GetByCity_Should_Return_Empty_List()
+        {
+            //Arrange
+            var fakeCity = "FakeCity";
+
+            //Act
+            var result = await branchRepository.GetByCity(fakeCity);
+
+            //Assert
+            result.Should().BeEmpty();
+        }
+
+        [Fact]
         public async Task GetById_Should_Pass()
         {
             //Arrange
@@ -71,12 +84,25 @@ namespace CodeChallenge.UnitTest.Repositories
             var result = await branchRepository.GetById(branch.Code);
 
             //Assert
-            result.Should().NotBeNull();
+            Assert.Single(result);
             result.Should().Contain(branch);
         }
 
         [Fact]
-        public async Task GetBySeller_Should_Pass()
+        public async Task GetById_Should_Return_Empty_List()
+        {
+            //Arrange
+            var fakeId = "FakeId";
+
+            //Act
+            var result = await branchRepository.GetById(fakeId);
+
+            //Assert
+            result.Should().BeEmpty();
+        }
+
+        [Fact]
+        public async Task GetByClientDocument_Should_Pass()
         {
             //Arrange
             var client = clients[0];
@@ -87,6 +113,19 @@ namespace CodeChallenge.UnitTest.Repositories
             //Assert
             result.Should().NotBeNull();
             result.Should().Contain(client.Branches);
+        }
+
+        [Fact]
+        public async Task GetByClientDocument_Should_Fail_When_Client_Dont_Exist()
+        {
+            //Arrange
+            var fakeDoc = "FakeDocument";
+
+            //Act
+            var act = async () => { await branchRepository.GetByClientDocument(fakeDoc); };
+
+            //Assert
+            await act.Should().ThrowAsync<Exception>();
         }
 
         [Fact]

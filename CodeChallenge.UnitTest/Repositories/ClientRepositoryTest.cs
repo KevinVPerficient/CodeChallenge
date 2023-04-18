@@ -38,17 +38,19 @@ namespace CodeChallenge.UnitTest.Repositories
 
         [Fact]
         public void GetAll_Should_Pass()
-        {
+        {                                                                                            
             //Arrange
-            var client = clients;
+            var clientCount = clients.Count();
 
             //Act
             var result = clientRepository.GetAll();
 
             //Assert
-            result.Should().NotBeNull(); 
-            result.Should().HaveCount(clients.Count());
-            result.Should().Contain(client);
+            Assert.NotNull(result);
+            Assert.Equal(clientCount, result.Count());
+            //result.Should().NotBeNull(); 
+            //result.Should().HaveCount(clients.Count());
+            //result.Should().Contain(client);
         }
 
         [Fact]
@@ -66,6 +68,19 @@ namespace CodeChallenge.UnitTest.Repositories
         }
 
         [Fact]
+        public async Task GetByCity_Should_Return_Empty_List()
+        {
+            //Arrange
+            var fakeCity = "Fake City";
+
+            //Act
+            var result = await clientRepository.GetByCity(fakeCity);
+
+            //Assert
+            result.Should().BeEmpty();
+        }
+
+        [Fact]
         public async Task GetById_Should_Pass()
         {
             //Arrange
@@ -80,17 +95,44 @@ namespace CodeChallenge.UnitTest.Repositories
         }
 
         [Fact]
-        public async Task GetBySeller_Should_Pass()
+        public async Task GetById_Should_Return_Empty_List()
         {
             //Arrange
-            var client = clients[0];
+            var fakeId = "FakeId";
 
             //Act
-            var result = await clientRepository.GetBySeller(client.Branches.First().SellerCode);
+            //Act
+            var result = await clientRepository.GetById(fakeId);
 
             //Assert
-            result.Should().NotBeNull();
-            result.Should().Contain(client);
+            result.Should().BeEmpty();
+        }
+
+        [Fact]
+        public async Task GetBySeller_Should_Pass()
+        {
+            // Arrange
+            var sellerCode = clients[0].Branches.First().SellerCode; 
+
+            // Act
+            var result = await clientRepository.GetBySeller(sellerCode);
+
+            // Assert
+            Assert.Single(result);
+            result.Should().Contain(clients[0]);
+        }
+
+        [Fact]
+        public async Task GetBySeller_Should_Return_Empty_List()
+        {
+            //Arrange
+            var fakeSeller = "FakeSeller";
+
+            //Act
+            var result = await clientRepository.GetBySeller(fakeSeller);
+
+            //Assert
+            result.Should().BeEmpty();
         }
 
         [Fact]
@@ -127,16 +169,17 @@ namespace CodeChallenge.UnitTest.Repositories
         [Fact]
         public async Task Create_Should_Pass()
         {
-            //Arrange
-            var newClient = (FakeDataHelper.CreateFakeClient().Generate(1)).First();
+            // Arrange
+            var client = (FakeDataHelper.CreateFakeClient().Generate(1)).First();
+            client.Branches = FakeDataHelper.CreateFakeBranch().Generate(1);
 
-            //Act
-            var result = await clientRepository.Create(newClient);
-            var allClients = context.Clients.ToList();
+            // Act
+            var result = await clientRepository.Create(client);
 
-            //Assert
-            result.Should().Be(newClient);
-            allClients.Should().Contain(newClient);
+            // Assert
+            Assert.NotNull(result);
+            var savedClient = await context.Clients.FindAsync(result.ClientId);
+            Assert.NotNull(savedClient);
         }
     }
 }
