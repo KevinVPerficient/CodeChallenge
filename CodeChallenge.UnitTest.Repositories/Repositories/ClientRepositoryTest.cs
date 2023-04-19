@@ -24,7 +24,8 @@ namespace CodeChallenge.UnitTest.Repositories
             var options = new DbContextOptionsBuilder<ProjectDbContext>()
                 .UseInMemoryDatabase(databaseName: "TestDb").Options;
             context = new ProjectDbContext(options);
-            context.Clients.AddRange(clients);
+            //context.Clients.AddRange(clients);
+            context.AddRange(clients);
             context.SaveChanges();
 
             clientRepository = new ClientRepository(context);
@@ -135,7 +136,7 @@ namespace CodeChallenge.UnitTest.Repositories
         {
             //Arrange
             var client = clients[0];
-            client.FullName = "Kevin Vargas";
+            client.FullName = "New Name";
 
             //Act
             var act = async () => { await clientRepository.Update(client); };

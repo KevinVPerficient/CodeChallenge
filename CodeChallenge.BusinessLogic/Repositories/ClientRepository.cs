@@ -56,7 +56,7 @@ namespace CodeChallenge.Data.Services
 
         public async Task Update(Client obj)
         {
-            //_context.Clients.Update(obj);
+            _context.Clients.Update(obj);
             await _context.SaveChangesAsync();
         }
     }

@@ -25,7 +25,7 @@ namespace CodeChallenge.UnitTest.Repositories
             var options = new DbContextOptionsBuilder<ProjectDbContext>()
                 .UseInMemoryDatabase(databaseName: "TestDb").Options;
             context = new ProjectDbContext(options);
-            context.Clients.AddRange(clients);
+            context.AddRange(clients);
             context.SaveChanges();
 
             branchRepository = new BranchRepository(context);
