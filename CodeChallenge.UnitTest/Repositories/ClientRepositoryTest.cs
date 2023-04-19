@@ -12,8 +12,7 @@ namespace CodeChallenge.UnitTest.Repositories
     {
         private readonly ProjectDbContext context;
         private readonly IClientRepository clientRepository;
-        private List<Client> clients = FakeDataHelper.CreateFakeClient().Generate(4);
-
+        private IReadOnlyList<Client> clients = FakeDataHelper.CreateFakeClient().Generate(4);
 
         public ClientRepositoryTest()
         {
@@ -48,9 +47,6 @@ namespace CodeChallenge.UnitTest.Repositories
             //Assert
             Assert.NotNull(result);
             Assert.Equal(clientCount, result.Count());
-            //result.Should().NotBeNull(); 
-            //result.Should().HaveCount(clients.Count());
-            //result.Should().Contain(client);
         }
 
         [Fact]

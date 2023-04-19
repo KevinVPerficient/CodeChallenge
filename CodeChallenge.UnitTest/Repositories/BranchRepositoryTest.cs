@@ -12,8 +12,8 @@ namespace CodeChallenge.UnitTest.Repositories
     {
         private readonly ProjectDbContext context;
         private readonly IBranchRepository branchRepository;
-        private List<Client> clients = FakeDataHelper.CreateFakeClient().Generate(4);
-        private List<Branch> branches = FakeDataHelper.CreateFakeBranch().Generate(4);
+        private IReadOnlyList<Client> clients = FakeDataHelper.CreateFakeClient().Generate(4);
+        private List<Branch> branches = FakeDataHelper.CreateFakeBranch().Generate(1);
 
         public BranchRepositoryTest()
         {
@@ -155,6 +155,21 @@ namespace CodeChallenge.UnitTest.Repositories
 
             //Assert
             await act.Should().NotThrowAsync<Exception>();
+        }
+
+        [Fact]
+        public async Task Create_Should_Pass()
+        {
+            // Arrange
+            var branch = (FakeDataHelper.CreateFakeBranch().Generate(1)).First();
+
+            // Act
+            var result = await branchRepository.Create(branch);
+
+            // Assert
+            Assert.NotNull(result);
+            var savedBranch = await context.Branches.FindAsync(result.BranchId);
+            Assert.NotNull(savedBranch);
         }
     }
 }
