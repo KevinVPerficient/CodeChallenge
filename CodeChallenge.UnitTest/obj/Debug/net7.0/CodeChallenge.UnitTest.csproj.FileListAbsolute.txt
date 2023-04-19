@@ -1,4 +1,9 @@
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\bin\Debug\net7.0\CoverletSourceRootsMapping
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\obj\Debug\net7.0\CodeChallenge.UnitTest.csproj.AssemblyReference.cache
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\obj\Debug\net7.0\CodeChallenge.UnitTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\obj\Debug\net7.0\CodeChallenge.UnitTest.AssemblyInfoInputs.cache
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\obj\Debug\net7.0\CodeChallenge.UnitTest.AssemblyInfo.cs
+C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\obj\Debug\net7.0\CodeChallenge.UnitTest.csproj.CoreCompileInputs.cache
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\bin\Debug\net7.0\testhost.dll
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\bin\Debug\net7.0\CodeChallenge.Api.deps.json
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\bin\Debug\net7.0\CodeChallenge.Api.runtimeconfig.json
@@ -152,11 +157,6 @@ C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\C
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\bin\Debug\net7.0\CodeChallenge.Api.pdb
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\bin\Debug\net7.0\CodeChallenge.Business.pdb
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\bin\Debug\net7.0\CodeChallenge.Data.pdb
-C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\obj\Debug\net7.0\CodeChallenge.UnitTest.csproj.AssemblyReference.cache
-C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\obj\Debug\net7.0\CodeChallenge.UnitTest.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\obj\Debug\net7.0\CodeChallenge.UnitTest.AssemblyInfoInputs.cache
-C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\obj\Debug\net7.0\CodeChallenge.UnitTest.AssemblyInfo.cs
-C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\obj\Debug\net7.0\CodeChallenge.UnitTest.csproj.CoreCompileInputs.cache
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\obj\Debug\net7.0\CodeChallenge.UnitTest.csproj.CopyComplete
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\obj\Debug\net7.0\CodeChallenge.UnitTest.dll
 C:\Users\kevin.vargast\Documents\Perficient\Challenges\Challenge\CodeChallenge\CodeChallenge.UnitTest\obj\Debug\net7.0\refint\CodeChallenge.UnitTest.dll

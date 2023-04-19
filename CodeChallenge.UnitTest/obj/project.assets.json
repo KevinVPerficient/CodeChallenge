@@ -9011,9 +9011,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.UnitTest\\CodeChallenge.UnitTest.csproj",
-      "projectName": "CodeChallenge.UnitTest",
-      "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.UnitTest\\CodeChallenge.UnitTest.csproj",
+      "projectUniqueName": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.UnitTest\\CodeChallenge.UnitTest.Services.csproj",
+      "projectName": "CodeChallenge.UnitTest.Services",
+      "projectPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.UnitTest\\CodeChallenge.UnitTest.Services.csproj",
       "packagesPath": "C:\\Users\\kevin.vargast\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.UnitTest\\obj\\",
       "projectStyle": "PackageReference",

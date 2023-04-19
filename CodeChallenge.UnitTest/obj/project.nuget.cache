@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dRIMnvWhUY6xO0f/sZPQjmACZyleVBCzx/7Mzy9Nd/mBOnCD7SbesPUXMOwp+kTw+i4xC0hfsX+XZpB/Z3SO1A==",
+  "dgSpecHash": "ZwJ1MOrt1PsZVXPjs+X+27ym6fz/jRT9uzLwnn4fhSC/KmwMzcrfOg2mKlUrBwDppUeHtne8JvsPteCGZxxXTQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.UnitTest\\CodeChallenge.UnitTest.csproj",
+  "projectFilePath": "C:\\Users\\kevin.vargast\\Documents\\Perficient\\Challenges\\Challenge\\CodeChallenge\\CodeChallenge.UnitTest\\CodeChallenge.UnitTest.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kevin.vargast\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\kevin.vargast\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

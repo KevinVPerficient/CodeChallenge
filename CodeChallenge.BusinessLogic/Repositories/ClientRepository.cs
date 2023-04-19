@@ -24,7 +24,7 @@ namespace CodeChallenge.Data.Services
             _context.Clients.Remove(obj);
             await _context.SaveChangesAsync();
         }
-                                                                    
+                 
         public IEnumerable<Client> GetAll()
         {
             var clients = _context.Clients.Include(x => x.Branches).ToList();
