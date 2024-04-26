@@ -43,7 +43,6 @@ namespace CodeChallenge.Api.Controller
             return (clients == null || clients.Count() == 0) ? NotFound() : Ok(clients);
         }
 
-
         /// <summary>
         /// Updates a Client record
         /// </summary>
