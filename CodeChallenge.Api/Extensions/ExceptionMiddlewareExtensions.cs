@@ -21,8 +21,8 @@ namespace CodeChallenge.Api.Middleware
                         await context.Response.WriteAsync(new ErrorDetails
                         {
                             StatusCode = context.Response.StatusCode,
-                            Message = contextFeature.Error.Message,
-                        }.ToString());
+                            Message = contextFeature.Error.InnerException != null ? contextFeature.Error.InnerException.Message : contextFeature.Error.Message
+                        }.ToString()); 
                         Console.WriteLine(contextFeature.Error);
                     }
                 });

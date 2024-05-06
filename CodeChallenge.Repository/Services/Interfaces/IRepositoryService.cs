@@ -2,7 +2,7 @@
 {
     public interface IRepositoryService <T>
     {
-        public IEnumerable<T> GetAll();
+        public Task<IEnumerable<T>> GetAll();
         public Task<IEnumerable<T>> GetById(string Id);
         public Task<IEnumerable<T>> GetByCity(string City);
         public Task<bool> Create(T obj);

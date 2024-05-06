@@ -1,15 +1,12 @@
-using CodeChallenge.Api.Middleware;
-using CodeChallenge.Data.Data;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using CodeChallenge.Business.Services.Interfaces;
-using CodeChallenge.Business.Services;
-using CodeChallenge.Data.Services.Interfaces;
-using CodeChallenge.Data.Services;
 using AutoMapper;
+using CodeChallenge.Api.Middleware;
 using CodeChallenge.Business.DTOs.Mapping;
+using CodeChallenge.Business.Services;
+using CodeChallenge.Business.Services.Interfaces;
+using CodeChallenge.Data.Data;
+using CodeChallenge.Data.Services;
+using CodeChallenge.Data.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,18 +20,19 @@ builder.Services.AddDbContext<ProjectDbContext>(options =>
     builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
- 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(opt =>
-                {
-                    opt.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"])),
-                        ValidateIssuer = false,
-                        ValidateAudience = false,
-                    };
-                });
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy
+            .WithOrigins("http://localhost:3000")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+        });
+});
+
 
 builder.Services.AddSwaggerGen();
 var mapperConfig = new MapperConfiguration(mc =>
@@ -45,8 +43,6 @@ var mapperConfig = new MapperConfiguration(mc =>
 IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
 
-builder.Services.AddScoped<IAuthorizationService, AuthtorizationService>();
-builder.Services.AddScoped<IAccessRepository, AccessRepository>();
 builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddScoped<IClientRepository, ClientRepository>();
 builder.Services.AddScoped<IBranchService, BranchService>();
@@ -68,7 +64,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.ConfigureExceptionHandler();
-
+app.UseCors();
 app.UseAuthorization();
 
 app.MapControllers();

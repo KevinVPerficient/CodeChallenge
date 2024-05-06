@@ -26,14 +26,9 @@ namespace CodeChallenge.Data.Services
             await _context.SaveChangesAsync();
         }
 
-        public IEnumerable<Branch> GetAll()
-        {
-            return _context.Branches.ToList();
-        }
-
         public async Task<IEnumerable<Branch>> GetByCity(string City)
         {
-            return await _context.Branches.Where(x => x.City == City).ToListAsync();
+            return await _context.Branches.Include(x => x.Client).Where(x => x.City == City).ToListAsync();
         }
 
         public async Task<IEnumerable<Branch>> GetByClientDocument(string doc)
@@ -52,8 +47,13 @@ namespace CodeChallenge.Data.Services
 
         public async Task Update(Branch obj)
         {
-            //_context.Branches.Update(obj);
+            _context.Branches.Update(obj);
             await _context.SaveChangesAsync();
+        }
+
+        IEnumerable<Branch> IRepository<Branch>.GetAll()
+        {
+            return _context.Branches.Include(x => x.Client).ToList();
         }
     }
 }

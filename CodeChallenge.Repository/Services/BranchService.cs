@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CodeChallenge.Business.DTOs;
 using CodeChallenge.Business.Services.Interfaces;
 using CodeChallenge.Data.DTOs;
 using CodeChallenge.Data.DTOs.Validations;
@@ -51,7 +52,7 @@ namespace CodeChallenge.Business.Services
             return true;
         }
 
-        public IEnumerable<BranchDto> GetAll()
+        public async Task<IEnumerable<BranchDto>> GetAll()
         {
             var branches = _mapper.Map<List<BranchDto>>(_branchRepository.GetAll());
             return branches;
@@ -88,7 +89,6 @@ namespace CodeChallenge.Business.Services
                 .FirstOrDefault() ?? throw new Exception("Branch doesn't exist");
 
             branch.Name = obj.Name;
-            branch.SellerCode = obj.SellerCode;
             branch.Credit = obj.Credit;
             branch.Address = obj.Address;
             branch.City = obj.City;
@@ -97,6 +97,16 @@ namespace CodeChallenge.Business.Services
             branch.CellPhoneNumber = obj.CellPhoneNumber;
             branch.Email = obj.Email;
 
+            await _branchRepository.Update(branch);
+        }
+
+        public async Task UpdateSellerCode(SellerCodeDto sellerCode, string id, string doc)
+        {
+            var branch = (await _branchRepository.GetById(id))
+                .Where(x => x.Client.DocNumber == doc)
+                .FirstOrDefault() ?? throw new Exception("Branch doesn't exist");
+
+            branch.SellerCode = sellerCode.sellerCode;
             await _branchRepository.Update(branch);
         }
     }

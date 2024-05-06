@@ -36,9 +36,9 @@ namespace CodeChallenge.Business.Services
             return true;
         }
 
-        public IEnumerable<ClientDto> GetAll()
+        public Task<IEnumerable<ClientDto>> GetAll()
         {
-            return _mapper.Map<IEnumerable<ClientDto>>(_clientRepository.GetAll());
+            return Task.FromResult(_mapper.Map<IEnumerable<ClientDto>>(_clientRepository.GetAll()));
         }
 
         public async Task<IEnumerable<ClientDto>> GetByCity(string City)
